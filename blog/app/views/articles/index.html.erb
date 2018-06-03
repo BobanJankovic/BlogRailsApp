@@ -1,0 +1,21 @@
+<h1>Listing articles</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th></th>
+  </tr>
+ 
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.text %></td>
+      <td><%= link_to 'Show', article_path(article) %> | <%= link_to 'new', new_article_path %> | <%= link_to 'Delete',article, method: :delete, data: { confirm: 'Are you sure?' }  %> | <%= link_to 'Edit', edit_article_path(article) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<div id="slika">
+<%= image_tag("30742586_193750064575018_152311544749752320_n.jpg", :alt => "rss feed") %>
+</div>
